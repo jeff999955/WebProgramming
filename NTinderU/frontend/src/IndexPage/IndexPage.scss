@@ -1,0 +1,58 @@
+div.index {
+	display: flex;
+	width: 100%;
+
+	.index-header {
+		position: absolute;
+		width: 100%;
+		top: 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		>img.logo {
+			margin: 10px 50px;
+			width: 150px;
+			align-self: center;
+		}
+
+		>button {
+			margin: 10px 50px;
+			align-self: center;
+			background-color: transparent;
+			border: 1px #ffffff solid;
+			border-radius: 15px;
+			padding: 5px 15px;
+		}
+	}
+
+	>div.index-wrapper {
+		width: 100%;
+		height: 100vh;
+		margin: auto;
+		background-image: linear-gradient(#00000065, #00000065),
+			url("https://tinder.com/static/build/m/379766df6d9620c8f7e0bcc39c6905e2.jpg");
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-position: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		>#app-title {
+			font-size: 100px;
+			padding: 20px;
+			font-weight: bold;
+			color: #ffffff;
+		}
+
+		>button {
+			font-size: 20px;
+			border-radius: 30px;
+			width: 250px;
+			height: 60px;
+			background-image: linear-gradient(90deg, #e66465, #9198e5);
+		}
+	}
+}

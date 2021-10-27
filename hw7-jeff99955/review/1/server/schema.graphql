@@ -1,0 +1,33 @@
+type Query {
+	posts(query: String): [Post!]!
+}
+
+type Mutation {
+	createPost(data: createPostInput!): Post!
+	deleteAllPosts: String!
+}
+
+type Subscription {
+	post: PostSubscriptionPayload!
+}
+
+input createPostInput {
+	name: String!
+	body: String!
+}
+
+type Post {
+	body: String!
+	name: String!
+}
+
+enum MutationType {
+	CREATED
+}
+
+type PostSubscriptionPayload {
+	mutation: MutationType!
+	data: Post!
+}
+
+ 

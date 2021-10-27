@@ -1,0 +1,32 @@
+type Message {
+	_id: ID!
+	sender: String!
+	receiver: String!
+	body: String!
+}
+
+type Query {
+	messages: [Message]!
+	chatRoom(user: String!): [Message]!
+}
+
+type Mutation {
+	insertMessage(newMessage: createMessageInput): Message
+	clearAll: [Message]!
+}
+
+input createMessageInput {
+	sender: String!
+	receiver: String!
+	body: String!
+}
+
+type Subscription {
+	chatRoom(user: String!): chatRoomSubscriptionPayload!
+}
+
+type chatRoomSubscriptionPayload {
+	mutation: String!
+	data: Message!
+}
+

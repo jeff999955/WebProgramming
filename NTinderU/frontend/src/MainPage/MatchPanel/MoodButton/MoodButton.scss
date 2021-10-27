@@ -1,0 +1,19 @@
+.mood-button {
+	margin: 0 5px;
+	width: 4em;
+	background-color: white;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 4em;
+
+	&.mood-x>svg {
+		width: 75%;
+	}
+
+	&.mood-star>svg,
+	&.mood-heart>svg {
+		width: 40%;
+	}
+}

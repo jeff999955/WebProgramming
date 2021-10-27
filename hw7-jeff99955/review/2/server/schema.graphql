@@ -1,0 +1,32 @@
+type Query {
+  messages(name: String): [Message!]!
+}
+
+type Mutation {
+  createMessage(message: CreateMessageInput!): Message!
+  deleteMessage(name: String!): Boolean!
+}
+
+type Subscription {
+  message: MessageSubscriptionPayload!
+}
+
+type Message {
+  name: String!
+  body: String!
+}
+
+input CreateMessageInput {
+  name: String!
+  body: String!
+}
+
+enum MutationType {
+  CREATED
+  DELETED
+}
+
+type MessageSubscriptionPayload {
+  mutation: MutationType!
+  message: Message
+}

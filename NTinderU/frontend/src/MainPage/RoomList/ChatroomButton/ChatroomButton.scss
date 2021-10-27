@@ -1,0 +1,38 @@
+.chatroom-button {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	background-color: #f8fbfb;
+
+	>img.chatroom-button-picture {
+		margin: 0.5em 1.5em;
+		width: 20%;
+		border-radius: 50%;
+	}
+
+	.chatroom-button-username {
+		color: black;
+		font-size: 1.5em;
+	}
+
+	.chatroom-button-lastmessage {
+		color: #cccccc;
+	}
+
+	&.choosing {
+		background-color: white;
+		position: relative;
+		border-right: 0.3em solid #fd5068;
+
+		&::before {
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			position: absolute;
+			pointer-events: none;
+			box-shadow: 0 0 2em -1em black;
+			content: "";
+		}
+	}
+}

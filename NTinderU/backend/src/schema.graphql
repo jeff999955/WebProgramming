@@ -1,0 +1,101 @@
+scalar Date
+
+type User {
+	id: ID!
+	username: String!
+	password: String!
+	liked: [String!]
+	matched: [String!]
+	photo: String!
+	intro: String
+}
+
+type Message {
+	id: ID!
+	from: String!
+	to: String!
+	body: String!
+	timestamp: Date
+}
+
+type Chatroom {
+	id: ID!
+	users: [String!]!
+	messages: [Message]!
+}
+
+type Query {
+	"單個帳號"
+	user(username: String!): User
+	"所有帳號名稱"
+	users: [User!]!
+	"取得配對列表"
+	match(data: MatchInput!): [User!]
+	chatroom(id: ID!): Chatroom
+	chatrooms: [Chatroom]!
+	getrooms(username: String!): [Match!]
+}
+
+type Match{
+	target: String!
+	roomID: ID!
+}
+
+type Mutation {
+	"新增帳號"
+	createUser(data: MutationInput!): User
+	"刪除帳號"
+	deleteUser(data: MutationInput!): User
+	"(username)新增一個喜歡的對象(target)"
+	addLikedUser(data: LikedInput!): User
+	"(username)配對到一個新的對象(target)"
+	addMatchedUser(data: LikedInput!): User
+	createChatroom(data: chatroomMutationInput!): Chatroom
+	createMessage(id: ID!, data: messageMutationInput!): Message
+}
+
+input MutationInput {
+	username: String!
+	password: String!
+}
+
+input MatchInput {
+	username: String!
+	max_count: Int
+}
+
+input LikedInput {
+	username: String!
+	target: String!
+}
+
+input chatroomMutationInput {
+	users: [String!]!
+}
+
+input messageMutationInput {
+	from: String!
+	to: String!
+	body: String!
+}
+
+type Subscription {
+	message(username: String!): MessageSubscriptionPayload!
+	like(username: String!): SP
+	match(username: String!): SP
+}
+
+enum MutationType {
+	CREATED
+	DELETED
+}
+
+type MessageSubscriptionPayload {
+	mutation: MutationType!
+	data: Message
+}
+
+type SP {
+	mutation: MutationType!
+	data: Match!
+}

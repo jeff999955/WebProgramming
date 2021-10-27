@@ -1,0 +1,20 @@
+.match-panel {
+	width: 75vw;
+	position: relative;
+	background-color: #f5f7fa;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	overflow: hidden;
+
+	>.mood-buttons {
+		margin: 2vh 0;
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	.user-picture-big {
+		margin-top: 8vh;
+		height: 60vh;
+	}
+}

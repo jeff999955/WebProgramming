@@ -1,0 +1,25 @@
+{
+	"name": "ntinderu-backend",
+	"version": "0.1.0",
+	"repository": "https://github.com/NTinderU/NTinderU",
+	"author": "NTinderU",
+	"license": "MIT",
+	"private": true,
+	"dependencies": {
+		"apollo-server-express": "^2.19.2",
+		"dotenv-defaults": "^2.0.1",
+		"graphql": "^15.4.0",
+		"mongoose": "^5.11.9"
+	},
+	"scripts": {
+		"start": "webpack --watch"
+	},
+	"devDependencies": {
+		"dotenv-defaults": "^2.0.1",
+		"graphql-tag": "^2.11.0",
+		"nodemon-webpack-plugin": "^4.4.4",
+		"webpack": "^5.15.0",
+		"webpack-cli": "^4.3.1",
+		"webpack-node-externals": "^2.5.2"
+	}
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>TODO APP in pure JS</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="styles.css"
+        />
+    </head>
+    <body onload="show()">
+        <div id="root" class="todo-app__root">
+            <header class="todo-app__header">
+                <h1 class="todo-app__title">todos</h1>
+            </header>
+            <section class="todo-app__main">
+                <input id="txt_input" class="todo-app__input" />
+                <ul class="todo-app__list" id="todo_list">
+
+                </ul>
+            </section>
+            <footer class="todo-app__footer" id="todo-footer">
+                <div class="todo-app__total">
+                    <p id="todo_counter"> 0 left </p> 
+                </div>
+                <ul class="todo-app__view-buttons">
+                    <button id="btn_all" onclick="mode=0;show()">All</button>
+                    <button id="btn_active" onclick="mode=1;show()" >Active</button>
+                    <button id="btn_completed" onclick="mode=2;show()">Completed</button>
+                </ul>
+                <div class="todo-app__clean">
+
+                </div>
+            </footer>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
